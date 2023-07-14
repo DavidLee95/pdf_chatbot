@@ -104,7 +104,8 @@ def main():
         st.chat_message(msg["role"]).write(msg["content"])
     
     # Action to perform after asking the question
-    if question := st.chat_input("Write your question or comments here"):
+    question = st.chat_input("Write your question or comments here")
+    if question:
         
         # Display a warning message if OpenAI's API key is not registered
         if not openai_api_key:
