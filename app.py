@@ -33,7 +33,7 @@ def get_vectorstore(text_chunks, api_key):
     vectorstore = FAISS.from_texts(text_chunks, embedding=embeddings)
     return vectorstore
 
-# Teach the bot with the PDF information
+# Train the bot with the PDF information
 def get_conversation_chain(vectorstore, api_key):
     llm = ChatOpenAI(openai_api_key=api_key)
     memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
