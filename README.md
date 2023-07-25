@@ -8,7 +8,7 @@ PDF Chatbot works by receiving one or more PDF files by the user and train itsel
 
 The chatbot usesOpenAI NLP capabilities to train the chatbot with the PDF files that the user uploads. Therefore, the user must provide a OpenAI API to use the chatbot. 
 
-## Use the chatbot on the website (no downloads, dependencies or installations needed)
+## Use the chatbot on the website (no downloads, dependencies, or installations needed)
 
 In order to use the chatbot on the website, the user can go to the following link:
 
