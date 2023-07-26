@@ -2,6 +2,8 @@
 
 PDF Chatbot allows users to upload PDF files and use natural language processing (NLP) to train the chatbot with those files and answer users´ question or requests about the uploaded files.
 
+![Logo](Logo.png)
+
 ## Description
 
 PDF Chatbot works by receiving one or more PDF files by the user and train itself from those files to answer questions or requests from the user. When the user uploads 
