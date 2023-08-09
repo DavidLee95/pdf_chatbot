@@ -75,7 +75,7 @@ This application was made as a personal project and does not accept contribution
 
 ## License
 
-This project under the terms of the [MIT license](https://opensource.org/license/mit/)
+This project is under the terms of the [MIT license](https://opensource.org/license/mit/)
 
 
 
