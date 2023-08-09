@@ -54,7 +54,10 @@ In order to use the chatbot locally, you can do the following:
 pip install -r requirements.txt
 ```
 
-3. Run the program through the command: "streamlit run app.py"
+3. Run the `app.py` through the command: 
+```bash
+streamlit run app.py
+```
 4. Wait for the program to open locally on your web browser.
 5. Provide a OpenAI API
 6. Upload the PDF files to be analyzed and click on "PROCESS"
