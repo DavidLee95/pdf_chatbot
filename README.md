@@ -1,5 +1,5 @@
 <a>
-    <img src="./images/logo.png" alt="PDF Chatbot Logo" title="Logo" align="right" height="40" />
+    <img src="images/Logo.png" alt="PDF Chatbot Logo" title="Logo" align="right" height="40" />
 </a>
 
 # PDF Chatbot
@@ -9,7 +9,7 @@
 PDF Chatbot is a Python application that seeks to facilitate the interaction between humans and PDF files by allowing users to upload the PDF files and to ask question or requests about them to a chatbot. The application uses the PDFs provided by the user to train a chatbot that will answer the users´s queries using natural language processing (NLP).
 
 <div align="center">
-    <img src="./images/main_page.png" alt="PDF Chatbot Logo" width="900" />
+    <img src="images/Main_page.png" alt="PDF Chatbot Logo" width="900" />
 </div>
 
 ## Description
@@ -19,7 +19,7 @@ First of all, PDF Chatbot makes use of the "Streamlit" library to design the use
 As to the logic of the application, the following are the steps taken by the application:
 
 <div align="center">
-    <img src="images/description.png" alt="PDF Chatbot Logo" width="900" />
+    <img src="images/Description.png" alt="PDF Chatbot Logo" width="900" />
 </div>
 
 1. The user uploads one or more PDF files.
