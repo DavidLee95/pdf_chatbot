@@ -32,7 +32,7 @@ As to the logic of the application, the following are the essential steps taken 
 
 5. The chatbot is now ready! Whenever the user writes a query, the chatbot will search in the vector store the embeddings that relate the most to the user´s query, and the LLM will do the job of answering the user in the most coherent manner possible based on the results. As stated on step 4, the chatbot will remember the conversation to give answers based on previous queries and results as well.
 
-## Use the chatbot on the website (no downloads, dependencies, or installations needed, but can be slower than running it locally)
+## Use the chatbot on the website (no downloads, dependencies, or installations needed, but is slower than running it locally)
 
 In order to use the chatbot on the website, the user can go to the following link: 
 [CLICK HERE TO GO TO THE CHATBOT WEBSITE!](https://pdf-chatbot-iowz.onrender.com)
