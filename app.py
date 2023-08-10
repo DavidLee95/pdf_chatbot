@@ -50,11 +50,29 @@ def handle_userinput(question):
     st.session_state.chat_history = response['chat_history']
     return st.session_state.chat_history
 
+# Disable chat box
+def disable_chat():
+    st.session_state["chat_box"] = True
+
+# Enable chat box
+def enable_chat():
+    st.session_state["chat_box"] = False
+
 # Main function
 def main():
 
     #Setup page
     st.set_page_config(page_title="PDF Chatbot", page_icon=":robot_face:")
+
+    # Initialize session states
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = None
+    if "information" not in st.session_state:
+        st.session_state.information = None
+    if "conversations" not in st.session_state:
+        st.session_state["conversations"] = [{"role": "assistant", "content": "What questions do you have regarding your PDF documents?"}]
+    if "chat_box" not in st.session_state:
+        st.session_state["chat_box"] = True
 
     # Setup sidebar
     with st.sidebar:
@@ -88,23 +106,18 @@ def main():
                     # Create conversation chain
                     st.session_state.information = get_conversation_chain(vectorstore, openai_api_key) 
 
+                    # Enable chat
+                    enable_chat()
+
     # Setup streamlit main/center screen
     st.title("PDF Chatbot 💬")
-
-    # Initialize session states
-    if "chat_history" not in st.session_state:
-        st.session_state.chat_history = None
-    if "information" not in st.session_state:
-        st.session_state.information = None
-    if "conversations" not in st.session_state:
-        st.session_state["conversations"] = [{"role": "assistant", "content": "What questions do you have regarding your PDF documents?"}]
     
     # Display the first message
     for msg in st.session_state.conversations:
         st.chat_message(msg["role"]).write(msg["content"])
     
     # Action to perform after asking the question
-    if question := st.chat_input("Write your question or comments here"):
+    if question := st.chat_input("Write your question or comments here", disabled=st.session_state.chat_box, on_submit=disable_chat):
         
         # Display a warning message if OpenAI's API key is not registered
         if not openai_api_key:
@@ -131,6 +144,10 @@ def main():
             st.session_state.conversations.append({"role": "assistant", "content": msg})
             # Display the chatbot's reply
             st.chat_message("assistant").write(msg)
+        
+        # Enable chat
+        enable_chat()
+        st.experimental_rerun()
     
 if __name__ == '__main__':
     main()

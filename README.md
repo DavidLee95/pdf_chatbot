@@ -28,9 +28,9 @@ As to the logic of the application, the following are the essential steps taken 
 
 3. The chunks of text are then converted to embeddings, which are numerical representations of words in the form of vectors or arrays that contain the meaning and context of the words. Through these embeddings, the program can identify which words are the most relevant to a particular query that the user writes. Therefore, the process of converting the chunks of text to embeddings allows the bot to generate quick and coherent answers to a particular question or comment, and all these embeddings are stored in a vector store that is a type of database. In this particular application, the embeddings and the vector store in use are **OpenAI´s embeddings** and **FAISS**.
 
-4. Once the embeddings are stored, the Langchain framework will be used to build the chatbot. In simple terms, Langchain allows users to add different components such as prompts, data, agents or memory in order to create more robust and personalized Large Language Models (LLMs) from existing ones. In this particular application, the base LLM will be **OpenAI´s LLM**, the data will be the PDFs that were embedded in vector stores, and the memory will save the "chat history". 
+4. Once the embeddings are stored, the Langchain framework will be used to build the chatbot. In simple terms, Langchain allows users to add different components such as prompts, data, agents or memory in order to create more robust and personalized Large Language Models (LLMs) from existing ones. In this particular application, the base LLM will be **OpenAI´s LLM**, and the data will be the PDFs that were embedded in vector stores. 
 
-5. The chatbot is now ready! Whenever the user writes a query, the chatbot will search in the vector store the embeddings that relate the most to the user´s query, and the LLM will do the job of answering the user in the most coherent manner possible based on the results. As stated on step 4, the chatbot will remember the conversation to give answers based on previous queries and results as well.
+5. The chatbot is now ready! Whenever the user writes a query, the chatbot will search in the vector store the embeddings that relate the most to the user´s query, and the LLM will do the job of answering the user in the most coherent manner possible based on the results. 
 
 ## Use the chatbot on the website (no downloads, dependencies, or installations needed, but is slower than running it locally)
 
@@ -39,8 +39,8 @@ In order to use the chatbot on the website, the user can go to the following lin
 
 The steps to use it are the following:
 
-1. Provide a OpenAI API
-2. Upload the PDF files to be analyzed and click on "PROCESS"
+1. Provide a OpenAI API.
+2. Upload the PDF files to be analyzed and click on "PROCESS".
 3. You are ready to go! You can now ask questions or request information about the PDF files to the chatbot.
 
 ## Use the chatbot locally by running the program
@@ -58,9 +58,9 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-4. Wait for the program to open locally on your web browser
-5. Provide a OpenAI API
-6. Upload the PDF files to be analyzed and click on "PROCESS"
+4. Wait for the program to open locally on your web browser.
+5. Provide a OpenAI API.
+6. Upload the PDF files to be analyzed and click on "PROCESS".
 7. You are ready to go! You can now ask questions or request information about the PDF files to the chatbot.
 
 ## Credits
