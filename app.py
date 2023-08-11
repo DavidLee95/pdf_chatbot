@@ -46,7 +46,7 @@ def get_conversation_chain(vectorstore, api_key):
 
 # Input question and receive output
 def handle_userinput(question):
-    response = st.session_state.information({'question': question})
+    response = st.session_state.information({'question': f"According to the provided context, {question}"})
     st.session_state.chat_history = response['chat_history']
     return st.session_state.chat_history
 
@@ -92,6 +92,10 @@ def main():
             # Stop if the user did not add the OPENAI API key
             if not openai_api_key:
                 st.warning('Please add your OpenAI API key to continue.', icon="⚠️")
+                st.stop()
+            elif not pdf_docs:
+                st.warning('Please add upload a PDF document to continue.', icon="⚠️")
+                st.stop()
             else:
                 with st.spinner("Processing"):
                     # Get the pdf text
@@ -122,7 +126,6 @@ def main():
         # Display a warning message if OpenAI's API key is not registered
         if not openai_api_key:
             st.warning('Please add your OpenAI API key to continue.', icon="⚠️")
-            #st.write(st.session_state.information)
             st.stop()
         
         # Display a warning message if the PDF file was not processed
