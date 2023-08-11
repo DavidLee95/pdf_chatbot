@@ -78,7 +78,7 @@ def main():
     with st.sidebar:
         # Brief instructions
         space = st.container()
-        space.write('<p style="font-weight:bold;">Instructions:<br>1. Place your OPEN AI API key below<br>2. Upload your PDFs and click on "Process"<br>3. You are ready, enjoy the bot :)</p>', unsafe_allow_html=True)
+        space.write('<p style="font-weight:bold;">Instructions:<br>1. Place your OPEN AI API key below<br>2. Upload your PDFs and click on "Process"<br>3. Wait until processing is completed<br>4. You are ready, enjoy the bot :)</p>', unsafe_allow_html=True)
         
         # Add OPENAI API key
         openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
